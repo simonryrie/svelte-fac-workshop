@@ -1,3 +1,20 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities"
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+	@font-face {
+		font-family: 'Junge';
+		src: local('junge'), local('Junge'), url('/fonts/Junge/Junge-Regular.ttf');
+		font-weight: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Montserrat';
+		src:
+			local('montserrat'), local('Montserrat'),
+			url('/fonts/Montserrat_Alternates/MontserratAlternates-Regular.ttf');
+		font-weight: normal;
+		font-display: swap;
+	}
+}
