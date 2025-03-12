@@ -3,6 +3,7 @@
 		TypeComponent,
 		TypeVariant
 	} from '$lib/components/Typography/Typography.svelte';
+	import { bagTrayOpen } from '$lib/shared/bagTrayOpen.svelte';
 	import { getBasket, addToBasket } from '$lib/shared/basket.svelte';
 
 	interface Props {
@@ -22,8 +23,9 @@
 
 		if (totalInBasket < availableStock) {
 			addToBasket(id);
+			bagTrayOpen.open = true;
 		} else {
-			alert(`Only ${availableStock} items available`);
+			alert(`Only ${availableStock} items in stock. No more stock available.`);
 		}
 	};
 </script>
@@ -42,7 +44,7 @@
 			{description}
 		</Typography>
 		<Typography variant={TypeVariant.Body1Emphasise} component={TypeComponent.p}>
-			{price}
+			£{price}
 		</Typography>
 		<button class="bg-dark text-white py-2 px-4 rounded-4xl w-max" on:click={addToBag}
 			>Add to bag</button

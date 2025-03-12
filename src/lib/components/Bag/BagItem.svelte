@@ -28,7 +28,7 @@
 			{name}
 		</Typography>
 		<Typography variant={TypeVariant.Body1} component={TypeComponent.p}>
-			{price}
+			£{price}
 		</Typography>
 	</div>
 	<div class="flex gap-2 items-center justify-center">

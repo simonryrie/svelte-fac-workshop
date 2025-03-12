@@ -17,6 +17,6 @@
 	>
 		<img src={images[0]} />
 		<Typography variant={TypeVariant.Body1} classes="text-dark">{title}</Typography>
-		<Typography variant={TypeVariant.Body1} classes="text-dark">{price}</Typography>
+		<Typography variant={TypeVariant.Body1} classes="text-dark">£{price}</Typography>
 	</a>
 </div>

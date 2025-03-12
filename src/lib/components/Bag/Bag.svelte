@@ -16,6 +16,15 @@
 			})
 			.filter(Boolean) as Product[];
 	});
+
+	let totalPrice = $derived.by(() => {
+		return products.reduce((sum, product) => {
+			if (product.quantity) {
+				return sum + product.price * product.quantity;
+			}
+			return sum;
+		}, 0);
+	});
 </script>
 
 <div class="flex flex-col">
@@ -31,6 +40,13 @@
 				/>
 			{/if}
 		{/each}
+
+		<div class="flex justify-between items-center mt-4 p-4 border-t border-gray-300">
+			<Typography variant={TypeVariant.H4} component={TypeComponent.h4}>Total:</Typography>
+			<Typography variant={TypeVariant.H4} component={TypeComponent.h4}>
+				£{totalPrice.toFixed(2)}
+			</Typography>
+		</div>
 	{:else}
 		<Typography variant={TypeVariant.Body1} component={TypeComponent.p}>Basket is empty</Typography>
 	{/if}
